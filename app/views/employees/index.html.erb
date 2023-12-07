@@ -1,0 +1,35 @@
+
+<div class ="card mt-5 mb-4">
+    <div class= "card-body">
+        <h2 class = "text-center"> Listing Employees  </h2>
+    </div>
+</div>
+
+<table class ="table table-bordered">
+    <thead>
+        <tr>
+            <th> Name</th>
+            
+            <th>Designation</th>
+            <th>Plase of Posting</th>
+            <th>Address</th>
+            <th>Bank Id</th>
+            <th>Email</th>
+            <th>Contact No</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @employees.each do|employee|  %>
+        <tr>
+            <td><%= employee.name%> </td>
+            
+            <td><%= employee.designation%></td>
+            <td><%= employee.plase_of_posting%></td>
+            <td><%= employee.address%></td>
+            <td><%= employee.bank_id%></td>
+            <td><%= employee.email%></td>
+            <td><%= employee.contact_no%></td>
+        </tr>
+        <% end%>
+    </tbody>
+</table>
