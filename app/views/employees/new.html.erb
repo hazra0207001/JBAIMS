@@ -1,1 +1,38 @@
-new employee
+<div class ="card mt-5 mb-4">
+    <div class= "card-body">
+        <h2 class = "text-center"> New Employee Create  </h2>
+    </div>
+</div>
+<div class="mb-4">
+  <%= form_with model: @employee do |form|%>
+    <div class="mb-4">
+      <%= form.label "First Name:"  %>
+      <%= form.text_field :first_name %>
+      <%= form.label "Middle Name:"  %>
+      <%= form.text_field :middle_name %>
+      <%= form.label "Last Name:"  %>
+      <%= form.text_field :last_name %>
+    </div>
+    <div class="mb-4" >
+      <%= form.label "Designation:"  %>
+      <%= form.text_field :designation %>
+      <%= form.label "Plase Of Posting:"  %>
+      <%= form.text_field :plase_of_posting %>
+      <%= form.label "address:"  %>
+      <%= form.text_area :address%>
+    </div>
+    <div class="mb-4">
+      <%= form.label "Bank ID:"  %>
+      <%= form.text_field :bank_id %>
+      <%= form.label "Email:"  %>
+      <%= form.email_field :email %>
+      <%= form.label "Contact No:"  %>
+      <%= form.text_field :contact_no%>
+    </div>
+    <div class="mb-4">
+      <%= form.submit %>
+    </div>
+
+
+  <% end %>
+</div>

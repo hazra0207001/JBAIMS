@@ -1,0 +1,27 @@
+<%= form_with model: student do |form|%>
+
+  <div class="mb-4">
+    <%= form.label "Name:"  %>
+
+    <%= form.text_field :name %>
+    <%@student.errors.full_messages_for(:name).each do|message| %>
+      <p class=" text-danger"><%=message %></p>
+    <%end %>
+    <%= form.label "Roll No:"  %>
+    <%= form.text_field :roll_no %>
+    <%@student.errors.full_messages_for(:roll_no).each do|message| %>
+      <p class=" text-danger"><%=message %></p>
+    <%end %>
+    <%= form.label "Class:"  %>
+    <%= form.text_field :class_name %>
+    <%@student.errors.full_messages_for(:class_name).each do|message| %>
+      <p class=" text-danger"><%=message %></p>
+    <%end %>
+  </div>
+
+  <div class="mb-4">
+    <%= form.submit %>
+  </div>
+
+
+<% end %>

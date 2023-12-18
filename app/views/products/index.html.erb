@@ -1,0 +1,27 @@
+<div class ="card mt-5 mb-4">
+  <div class= "card-body">
+    <h2 class = "text-center"> Listing Products </h2>
+  </div>
+</div>
+<table class ="table table-bordered">
+  <thead>
+  <tr>
+    <th> Name</th>
+
+    <th>Serial No</th>
+    <th>Price</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @products.each do|product|  %>
+    <tr>
+      <td><%= product.name%> </td>
+
+      <td><%= product.serial_no%></td>
+      <td><%= product.price%></td>
+
+    </tr>
+  <% end%>
+  </tbody>
+</table>

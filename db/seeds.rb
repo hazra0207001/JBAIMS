@@ -8,15 +8,15 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 employee =Employee.new(
- first_name: "Palash",
- middle_name:"Kumar",
- last_name:"Hazra",
- designation: "PO-IT",
+ first_name: "Abdul",
+ middle_name:"",
+ last_name:"Barek",
+ designation: "SPO-IT",
  plase_of_posting: "DODS",
  address: "48, Motijheel",
- bank_id:"0207",
- email: "hazra@gmail.com",
- contact_no: "013578"
+ bank_id:"0991",
+ email: "barek1@gmail.com",
+ contact_no: "0170303038"
 )
 employee =Employee.new(
  first_name: "Palash",
@@ -29,3 +29,5 @@ employee =Employee.new(
  email: "hazra1@gmail.com",
  contact_no: "013578"
 )
+student =Student.new(name: "palash",roll_no: "01", class_name: "11")
+product =Product.new(name: "HP", serial_no: "WXOX", price: 100)

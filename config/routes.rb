@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   root  'pages#home'
   #get 'pages/home'
   resources :employees
+  resources :students
+  resources :products
   get "about"=>'pages#about_us'
   get "contact_us"=>'pages#contact_us'
   get "terms"=>'pages#terms_and_conditions'

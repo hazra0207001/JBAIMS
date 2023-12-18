@@ -1,0 +1,29 @@
+<div class ="card mt-5 mb-4">
+  <div class= "card-body">
+    <h2 class = "text-center"> <%=@student.name %>'s Information </h2>
+  </div>
+</div>
+<table class ="table table-bordered">
+  <thead>
+  <tr>
+    <th> Name</th>
+
+    <th>Roll No</th>
+    <th>Class</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td><%= @student.name%> </td>
+
+      <td><%= @student.roll_no.present? ? @student.roll_no : "--NA--"%></td>
+      <td><%= @student.class_name.present? ? @student.class_name : '--N/A--'%></td>
+      <td><%= link_to "Edit",edit_student_path(@student.id), class:"btn btn-primary" %></td>
+      <td><%=link_to "Delete", student_path(@student.id),class: "btn btn-danger", method: :delete, data:{confirm:"Are you sure to delete?"} %></td>
+      <td><%=link_to "Back To Students", students_path, class:"btn btn-info"%></td>
+    </tr>
+
+  </tbody>
+</table>
