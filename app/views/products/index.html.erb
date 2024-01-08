@@ -1,4 +1,7 @@
+<%= flash[:notice]%>
+
 <div class ="card mt-5 mb-4">
+
   <div class= "card-body">
     <h2 class = "text-center"> Listing Products </h2>
   </div>
@@ -10,6 +13,9 @@
 
     <th>Serial No</th>
     <th>Price</th>
+    <th>Quantity</th>
+    <th>Total Price</th>
+    <th>Type</th>
     <th>Actions</th>
   </tr>
   </thead>
@@ -20,6 +26,26 @@
 
       <td><%= product.serial_no%></td>
       <td><%= product.price%></td>
+      <td><%= product.unit%></td>
+      <td><%= product.price* product.unit %></td>
+      <td><%= product.type.name %></td>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Actions
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "show", product_path(product.id), class: "dropdown-item"%></li>
+            <li><%= link_to "Edit",edit_product_path(product.id), class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Delete",product_path(product.id), class: "dropdown-item", method: :delete, data: {confirm: 'Are you sure to Delete?'} %></li>
+          </ul>
+        </div>
+
+
+
+
+      </td>
 
     </tr>
   <% end%>

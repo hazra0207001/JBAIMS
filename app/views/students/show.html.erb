@@ -20,9 +20,9 @@
 
       <td><%= @student.roll_no.present? ? @student.roll_no : "--NA--"%></td>
       <td><%= @student.class_name.present? ? @student.class_name : '--N/A--'%></td>
-      <td><%= link_to "Edit",edit_student_path(@student.id), class:"btn btn-primary" %></td>
+      <td><%= link_to "Edit",edit_student_path(@student.id), class: "btn btn-primary" %></td>
       <td><%=link_to "Delete", student_path(@student.id),class: "btn btn-danger", method: :delete, data:{confirm:"Are you sure to delete?"} %></td>
-      <td><%=link_to "Back To Students", students_path, class:"btn btn-info"%></td>
+      <td><%=link_to "Back To Students", students_path, class: "btn btn-info"%></td>
     </tr>
 
   </tbody>

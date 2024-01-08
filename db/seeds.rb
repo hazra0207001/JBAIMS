@@ -30,4 +30,4 @@ employee =Employee.new(
  contact_no: "013578"
 )
 student =Student.new(name: "palash",roll_no: "01", class_name: "11")
-product =Product.new(name: "HP", serial_no: "WXOX", price: 100)
+product =Product.new(name: "HP", serial_no: "WXOX", price: 100, unit:2)
