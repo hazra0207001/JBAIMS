@@ -6,7 +6,7 @@
 </div>
 <% if @product.images.attached? %>
   <% @product.images.each do |image| %>
-    <div > <%= image_tag image.variant(resize: "400x500")%></div>
+    <div > <%= image_tag image, size: '200x200'%></div><br>
   <% end %>
 <% else %>
   <p>No images attached.</p>

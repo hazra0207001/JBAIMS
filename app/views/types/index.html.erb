@@ -1,0 +1,50 @@
+<%= flash[:notice]%>
+
+<div class ="card mt-5 mb-4">
+
+  <div class= "card-body">
+    <h2 class = "text-center"> Listing Types </h2>
+  </div>
+</div>
+<table class ="table table-bordered">
+  <thead>
+  <tr>
+    <th> Name</th>
+    <th>Products</th>
+
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @types.each do|type|  %>
+    <tr>
+      <td><%= type.name%> </td>
+      <td>
+         <% @type = Type.find(type.id)%>
+        <% @product_names = @type.products.pluck(:name) %>
+        <% @product_names.each do |name| %>
+            <p><%=name%></p>
+        <% end%>
+      </td>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Actions
+          </button>
+          <ul class="dropdown-menu">
+            <li><%= link_to "show", type_path(type.id), class: "dropdown-item"%></li>
+            <li><%= link_to "Edit",edit_type_path(type.id), class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Delete",product_path(type.id), class: "dropdown-item", method: :delete, data: {confirm: 'Are you sure to Delete?'} %></li>
+          </ul>
+        </div>
+
+
+
+
+      </td>
+
+    </tr>
+  <% end%>
+  </tbody>
+</table>

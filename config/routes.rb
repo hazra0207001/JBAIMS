@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :employees
   resources :students
   resources :products
+  resources :types
   get "about"=>'pages#about_us'
   get "contact_us"=>'pages#contact_us'
   get "terms"=>'pages#terms_and_conditions'
