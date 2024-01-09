@@ -27,8 +27,8 @@
       <td><%= product.serial_no%></td>
       <td><%= product.price%></td>
       <td><%= product.unit%></td>
-      <td><%= product.price* product.unit %></td>
-      <td><%= product.type.name %></td>
+      <td><%= product.total_price %></td>
+      <td><%= link_to product.type.name, type_path(product.type.id) %></td>
       <td>
         <div class="btn-group">
           <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

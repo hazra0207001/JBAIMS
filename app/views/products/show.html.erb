@@ -19,6 +19,8 @@
     <th>Serial No</th>
     <th>Price</th>
     <th>Quantity</th>
+    <th>Purchase date</th>
+    <th>Warranty upto</th>
     <th>Actions</th>
   </tr>
   </thead>
@@ -30,6 +32,8 @@
       <td><%= @product.serial_no%></td>
       <td><%= @product.price%></td>
       <td><%= @product.unit%></td>
+      <td><%= @product.purchase_date%></td>
+      <td><%= @product.warranty_expiration_date%></td>
       <td>
         <%#= link_to "show", product_path(@product.id) %>
         <%= link_to "Edit",edit_product_path(@product.id), class: "btn btn-outline-primary rounded-0"%>

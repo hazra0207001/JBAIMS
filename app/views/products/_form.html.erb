@@ -35,6 +35,20 @@
     <% end %>
   </div>
   <div class="col-lg-4">
+    <label for="formGroupExampleInput2" class="form-label">Purchase Date:</label>
+    <%= form.date_field :purchase_date, class: "form-control  ",  placeholder: "date" %>
+    <% @product.errors.full_messages_for(:purchase_date).each do |message| %>
+      <p class="text-danger"><%=message %></p>
+    <% end %>
+  </div>
+  <div class="col-lg-4">
+    <label for="formGroupExampleInput2" class="form-label">Warranty:</label>
+    <%= form.number_field :warranty, class: "form-control  ",  placeholder: "warranty" %>
+    <% @product.errors.full_messages_for(:warranty).each do |message| %>
+      <p class="text-danger"><%=message %></p>
+    <% end %>
+  </div>
+  <div class="col-lg-4">
     <label for="formGroupExampleInput2" class="form-label">Images:</label><br>
     <div class="field">
     <%= form.label :images %>

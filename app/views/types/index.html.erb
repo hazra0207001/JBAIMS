@@ -10,7 +10,7 @@
   <thead>
   <tr>
     <th> Name</th>
-    <th>Products</th>
+    
 
     <th>Actions</th>
   </tr>
@@ -19,13 +19,7 @@
   <% @types.each do|type|  %>
     <tr>
       <td><%= type.name%> </td>
-      <td>
-         <% @type = Type.find(type.id)%>
-        <% @product_names = @type.products.pluck(:name) %>
-        <% @product_names.each do |name| %>
-            <p><%=name%></p>
-        <% end%>
-      </td>
+      
       <td>
         <div class="btn-group">
           <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
