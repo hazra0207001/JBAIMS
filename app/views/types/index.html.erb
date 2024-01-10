@@ -42,3 +42,66 @@
   <% end%>
   </tbody>
 </table>
+
+
+
+<div class="accordion" id="accordionExample">
+  <% @types.each_with_index do|type, index|%>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_<%=index+1%>" aria-expanded="true" aria-controls="collapse_<%=index+1%>">
+          <%=type.name%>
+        </button>
+      </h2>
+      <div id="collapse_<%=index+1%>" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+          <% if type.products.present?%>
+              <div class= "card-body">
+                <h2 class = "text-center"> Products Details </h2>
+              </div>
+
+
+            <table class ="table table-bordered">
+              <thead>
+                <tr>
+                    <th> Name</th>
+                    <th> Serial No</th>
+                    <th> Unit Price</th>
+                    <th> Unit </th>
+                    <th> Total Price</th>
+                    <th> Image </th>
+                    <th> Actions</th>
+                </tr>
+              </thead>
+              <% @products =type.products%>
+              <tbody>
+                <% @products.each do |product|%>
+                    <tr>
+                        <td><%= product.name%> </td>
+                        <td><%= product.serial_no%> </td>
+                        <td><%= product.price%> </td>
+                        <td><%= product.unit%> </td>
+                        <td><%= product.total_price%> </td>
+                        <td>
+                            <% if product.images.attached? %>
+                                <% product.images.each do |image| %>
+                                    <%= image_tag image, size: '50x50'%>
+                                <% end %>
+                                <% else %>
+                                <p>No images attached.</p>
+                            <% end %>
+                        </td>
+                        <td>
+                            
+                            <%= link_to "Edit",edit_product_path(product.id), class: "btn btn-outline-primary rounded-0"%>
+                            <%= link_to "Delete",product_path(product.id), class: "btn btn-outline-danger rounded-0", method: :delete, data: {confirm: 'Are you sure to Delete?'} %>
+                        </td>
+                    </tr>
+                <% end%>
+
+              </tbody>
+            </table>
+            <% end%>
+      </div>
+    </div>
+  <% end%>
+</div>
